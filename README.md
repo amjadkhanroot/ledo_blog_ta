@@ -1,6 +1,6 @@
-    ----Clinic App for demo----
+# lendo_blog_ta    ----Blog App for demo----
 
-    ----Develped by Angular 13 & Spring boot 2.6.6----
+    ----Develped by Spring boot 2.6.6----
 
 ##How to run the app:
 
@@ -17,7 +17,7 @@
 
 
 ###Postman Collection:
-`https://www.getpostman.com/collections/9ce74f0c92b81fd8e859`
+`https://www.getpostman.com/collections/a79141aa06fafeae8a40`
 
     
     Thanks & regards 
