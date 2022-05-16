@@ -12,9 +12,10 @@
 
 ##How to use the app:
 - First call "insert-random-users" endpoints to get random users, all have same password which is "password".<br>
-- Next call "insert-random-posts"  endpoints to get random posts.
-- Last call "insert-random-comments" endpoints to get random comments.<br>
-
+- Take a username and login to get the access token.
+- Next call "insert-random-posts"  endpoints using the access token to get random posts.
+- Lastly call "insert-random-comments" endpoints using the access token to get random comments.<br>
+- And consume the restApi.
 
 ###Postman Collection:
 `https://www.getpostman.com/collections/a79141aa06fafeae8a40`
