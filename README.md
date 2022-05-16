@@ -1,4 +1,4 @@
-# ledo_blog_ta    ----Blog App for demo----
+# lendo_blog_ta    ----Blog App for demo----
 
     ----Develped by Spring boot 2.6.6----
 
