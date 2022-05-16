@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/")
+    @GetMapping("/list")
     public HttpEntity<?> getUsers() {
         return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", userService.getAllUsers()), HttpStatus.OK);
     }

@@ -36,4 +36,7 @@ public class PostService {
     }
 
 
+    public List<Post> getMyPosts(Long id) {
+        return postRepo.findAllByUser_Id(id);
+    }
 }

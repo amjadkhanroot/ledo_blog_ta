@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,7 +23,7 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
-    @GetMapping("/")
+    @GetMapping("/list")
     public HttpEntity<?> commentList() {
         return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", commentService.getAll()), HttpStatus.OK);
     }
@@ -31,6 +32,12 @@ public class CommentController {
     public HttpEntity<?> myComment() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getDetails();
         return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", commentService.getCommentByEmail(user.getEmail())), HttpStatus.OK);
+    }
+
+    @GetMapping("/comment-by-post-id/{postId}")
+    public HttpEntity<?> myComment(@PathVariable Long postId) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getDetails();
+        return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", commentService.getCommentByPost(postId)), HttpStatus.OK);
     }
 
     @GetMapping("/insert-random-comment")

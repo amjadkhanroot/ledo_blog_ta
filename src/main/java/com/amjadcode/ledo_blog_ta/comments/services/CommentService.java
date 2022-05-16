@@ -40,4 +40,8 @@ public class CommentService {
     public List<Comment> getCommentByEmail(String email) {
         return commentRepo.findAllByEmail(email);
     }
+
+    public List<Comment> getCommentByPost(Long postId) {
+        return commentRepo.findAllByPostId(postId);
+    }
 }

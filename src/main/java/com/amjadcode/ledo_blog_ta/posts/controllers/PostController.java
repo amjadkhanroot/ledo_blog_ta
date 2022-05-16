@@ -24,7 +24,7 @@ public class PostController {
     @Autowired
     PostService postService;
 
-    @GetMapping("/")
+    @GetMapping("/list")
     public HttpEntity<?> postList() {
         return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", postService.getAll()), HttpStatus.OK);
     }
@@ -32,7 +32,7 @@ public class PostController {
     @GetMapping("/my-posts")
     public HttpEntity<?> commentList() {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getDetails();
-        return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", user.getPosts()), HttpStatus.OK);
+        return new ResponseEntity<>(new ApiResponse(true, "200", "success", "", postService.getMyPosts(user.getId())), HttpStatus.OK);
     }
 
     @GetMapping("/insert-random-post")
